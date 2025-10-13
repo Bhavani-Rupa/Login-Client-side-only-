@@ -22,7 +22,7 @@ No installation required.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/login.git
+   git clone https://github.com/Bhavani-Rupa/Login-Client-side-only-
    cd login
    ```
 2. Open `index.html` in your browser.
@@ -48,3 +48,4 @@ login/
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
