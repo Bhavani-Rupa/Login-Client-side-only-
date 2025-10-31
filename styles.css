@@ -1,0 +1,174 @@
+/*
+  This file controls how the page looks (colors, spacing, animations).
+  Non-technical overview:
+  - Each section below changes the appearance of a specific part of the page.
+  - Comments explain in simple words what is being styled.
+*/
+
+/* PAGE BACKGROUND: purple gradient and centered content */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* MAIN CONTAINER: limits the card width so it looks tidy */
+.login-container {
+    max-width: 450px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* WHITE CARD: rounded corners and soft shadow */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* CARD HEADER: colorful top section with title */
+.card-header {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 15px 15px 0 0 !important;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* INPUT FIELDS: rounded borders and smooth focus effect */
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+/* INPUT FOCUS: blue highlight when clicking a field */
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* MAIN BUTTON: gradient background and bold text */
+.btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER: slight lift and glow on hover */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* SOCIAL BUTTONS: consistent rounded buttons for Google/Facebook/GitHub */
+.social-btn {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* SOCIAL BUTTON HOVER: simple lift effect */
+.social-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* PASSWORD STRENGTH BAR: thin colored bar below the password */
+.password-strength {
+    height: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+}
+
+.strength-weak { background-color: #dc3545; width: 25%; }
+.strength-fair { background-color: #ffc107; width: 50%; }
+.strength-good { background-color: #17a2b8; width: 75%; }
+.strength-strong { background-color: #28a745; width: 100%; }
+
+/* ALERT BOX: floating message panel in the top-right */
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease;
+    opacity: 1 !important;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* CARD FADE-IN: gentle entrance animation */
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* EYE ICON: clickable icon to show/hide password text */
+.eye-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+}
+
+/* INPUT WRAPPER: needed for the eye icon positioning */
+.input-group {
+    position: relative;
+}
+
+/* ROW FOR REMEMBER/RESET (not used in this demo form) */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+/* DIVIDER: thin line with the word OR in the middle */
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #dee2e6;
+}
+
+/* DIVIDER LABEL: keeps the word OR readable */
+.divider span {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0 15px;
+    color: #6c757d;
+}
